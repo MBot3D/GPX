@@ -20,6 +20,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
+    - name: prepare
+    - run: sudo apt-get install build-essential   
     - name: release
       run: ./release.sh
 
