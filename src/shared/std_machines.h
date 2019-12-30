@@ -359,6 +359,41 @@ static Machine clone_r1d = {
     MACHINE_TYPE_CLONE_R1D
 };
 
+// Grid2/2+ 3D printer, single extruder, 18T GT2 pulleys for X and Y
+static Machine grid2 = {
+    "g2", "Grid2/2+ - single extruder", 0, 0, 
+    {18000, 850, 12, 2500, 270, 88.888889, ENDSTOP_IS_MAX}, // x axis
+    {18000, 850, 12, 2500, 230, 88.888889, ENDSTOP_IS_MAX}, // y axis
+    {1170, 50, 12, 1100, 195, 400, ENDSTOP_IS_MIN},        // z axis
+    {5000, 5000, 100, 96.275201870333662468889989185642, 3200, 0}, // a extruder
+    {5000, 5000, 100, 96.275201870333662468889989185642, 3200, 0}, // b extruder
+    1.75, // nominal filament diameter
+    0.97, // nominal packing density
+    0.4, // nozzle diameter
+    {0, 0, 0}, // toolhead offsets
+    {0.0050, 0.0550},  // JKN
+    1,  // extruder count
+    20, // timeout
+    MACHINE_TYPE_GRID2
+};
+
+// Grid2/2+ 3D printer, dual extruders, 18T GT2 pulleys for X and Y
+static Machine grid2_D = {
+    "g2d", "Grid2/2+ - dual extruder", 0, 0, 
+    {18000, 850, 12, 2500, 270, 88.888889, ENDSTOP_IS_MAX}, // x axis
+    {18000, 850, 12, 2500, 230, 88.888889, ENDSTOP_IS_MAX}, // y axis
+    {1170, 50, 12, 1100, 195, 400, ENDSTOP_IS_MIN},        // z axis
+    {5000, 5000, 100, 96.275201870333662468889989185642, 3200, 0}, // a extruder
+    {5000, 5000, 100, 96.275201870333662468889989185642, 3200, 0}, // b extruder
+    1.75, // nominal filament diameter
+    0.97, // nominal packing density
+    0.4, // nozzle diameter
+    {33, 0, 0}, // toolhead offsets
+    {0.0050, 0.0550},  // JKN
+    2,  // extruder count
+    20, // timeout
+    MACHINE_TYPE_GRID2_D
+};
 
 #if defined(MACHINE_ARRAY)
 
@@ -382,6 +417,8 @@ static Machine *machines[] = {
      &zyyx,
      &zyyx_D,
      &zyyx_pro,
+     &grid2,
+     &grid2_D,     
      NULL
 };
 
