@@ -48,6 +48,8 @@
 #define MACHINE_TYPE_CLONE_R1      17  // Clone R1 Single w/HBP
 #define MACHINE_TYPE_CLONE_R1D     18  // Clone R1 Dual w/HBP
 #define MACHINE_TYPE_ZYYX_PRO      19  // ZYYX Pro
+#define MACHINE_TYPE_GRID2          20  // GRID2/2+ Single
+#define MACHINE_TYPE_GRID2_D        21  // GRID2/2+ Dual
 
 // endstop flags
 #define ENDSTOP_IS_MIN 0
