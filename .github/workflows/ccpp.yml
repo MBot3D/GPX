@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: configure
-      run: mkdir build && cd build && ./configure
+      run: mkdir build && cd build && ../configure
     - name: build
       run: make
 
@@ -24,6 +24,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: configure
-      run: mkdir build && cd build && ./configure
+      run: mkdir build && cd build && ../configure
     - name: build
       run: make
