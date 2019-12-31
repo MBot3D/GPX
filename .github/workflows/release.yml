@@ -3,14 +3,14 @@ name: Create Release
 on: [push]
 
 jobs:
-  build-all:
+  build-linux:
 
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     
     steps:
     - uses: actions/checkout@v1
     - name: prepare
-      run: sudo apt-get install -y build-essential autoconf automake    
+      run: sudo apt-get install -y build-essential autoconf automake mingw-w64 mingw-w64-tools mingw-w64-i686-dev mingw-w64-x86-64-dev    
     - name: release
       run: sudo ./release.sh
     - name: Create Release
@@ -30,7 +30,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-        asset_path: build/win64/gpx-2.5.3-win64.zip
+        asset_path: build/gpx-2.5.3-win64.zip
         asset_name: gpx-2.5.3-win64.zip
         asset_content_type: application/zip
 
