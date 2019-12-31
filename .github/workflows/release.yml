@@ -1,22 +1,18 @@
 name: Create Release
 
-on:
-  push:
-    # Sequence of patterns matched against refs/tags
-    tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+on: [push]
 
 jobs:
   build-all:
 
-    runs-on: ubuntu-16.04
+    runs-on: linux
     
     steps:
     - uses: actions/checkout@v1
     - name: prepare
       run: sudo apt-get install -y build-essential autoconf automake    
     - name: release
-      run: sudo autoreconf -ivf  && sudo ./release.sh
+      run: sudo ./release.sh
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
