@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: prepare
-      run: sudo apt-get install build-essential automake   
+      run: sudo apt-get install -y build-essential automake   
     - name: release
       run: sudo ./release.sh
     - name: Create Release
